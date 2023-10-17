@@ -2,6 +2,8 @@ import React from 'react'
 import classes from './yachtCard.module.css'
 import { Link } from 'react-router-dom'
 import { BsFillPersonFill } from 'react-icons/bs'
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 
 const YachtCard = ({ yacht }) => {
 
@@ -16,7 +18,17 @@ const YachtCard = ({ yacht }) => {
                     <span>Rs {yacht.price}</span>
                     <span className={classes.passengers}><BsFillPersonFill />  {yacht.maxPassengers}</span>
                 </div>
-            </div>
+                <div>
+                  <span> {yacht.location}</span> 
+                  <div>
+                  {yacht.metersLong}
+                  </div>
+                   
+                </div>
+                <Stack spacing={1}>
+      <Rating name="half-rating" defaultValue={3.5} precision={0.5} />
+    </Stack>
+                </div>
         </Link>
     )
 }

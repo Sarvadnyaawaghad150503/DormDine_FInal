@@ -10,6 +10,8 @@ import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 import { BsBookmark, BsFillBookmarkFill } from "react-icons/bs";
 import Comment from "../comment/Comment";
+import Rating from '@mui/material/Rating';
+import Stack from '@mui/material/Stack';
 
 const YachtDetails = () => {
   const { user, token } = useSelector((state) => state.auth);
@@ -169,6 +171,9 @@ const YachtDetails = () => {
           <div className={classes.descContainer}>
             Description & Address: <p>{yacht?.desc}</p>
           </div>
+          <Stack spacing={1}>
+      <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
+    </Stack>
           <div className={classes.metersLong}>
             Phone Number: <span>{yacht?.metersLong}</span>
           </div>
@@ -234,7 +239,7 @@ const YachtDetails = () => {
         </div>
         {success && (
           <div className={classes.success}>
-            You've successfully contacted the owner of the yacht!
+            You've successfully contacted the owner of the Tiffin Services!
           </div>
         )}
         {shortComment && (
